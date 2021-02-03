@@ -55,7 +55,13 @@ func _thread_done(resource):
 	# Set as current scene
 	get_tree().current_scene = new_scene
 #	progress.visible = false
-
+	clear_stuff()
+func clear_stuff():
+	thread = null
+	new_scene = null
+	res = null
+	can_change = false
+	scene_to_preload = ""
 func preload_scene(path):
 	scene_to_preload = path
 	can_change = false
