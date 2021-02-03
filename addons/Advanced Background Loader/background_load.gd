@@ -57,7 +57,7 @@ func _thread_done(resource):
 #	progress.visible = false
 	clear_stuff()
 func clear_stuff():
-	thread = null
+#	thread = null
 	new_scene = null
 	res = null
 	can_change = false
