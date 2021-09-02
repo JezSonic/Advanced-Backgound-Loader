@@ -26,7 +26,9 @@ Basically Background Loader will create a new thread, and load your scene while 
     //set the scene to load and start thread
     BackgroundLoader.preload_scene("res://scn_menu.tscn"); 
     while (BackgroundLoader.can_change == false):
-        BackgroundLoader.change_scene_to_preloaded();
+        yield(get_tree().create_timer(1,false),"timeout")
+    
+    BackgroundLoader.change_scene_to_preloaded();
 ```
 
 ## Using CSharp Version of Advanced Background Loader
