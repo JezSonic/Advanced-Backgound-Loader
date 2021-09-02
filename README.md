@@ -22,7 +22,7 @@ Basically Background Loader will create a new thread, and load your scene while 
 
 * Simplest case possible
 
-```gscript
+```gd
     //set the scene to load and start thread
     BackgroundLoader.preload_scene("res://scn_menu.tscn"); 
     while (BackgroundLoader.can_change == false):
