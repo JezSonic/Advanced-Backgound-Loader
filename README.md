@@ -1,3 +1,34 @@
+## Using GDScript Version of Advanced Background Loader
+
+#### First Steps
+
+* Open Godot
+* Open Project Settings
+* Go to Plugins
+* Enable Addon called: `Advanced Background Loader`
+
+#### Understanding it
+
+since the code provides:
+* `BackgroundLoader`
+
+when you open the first scene of your game this instance can be accessed anywhere
+without any problem, from any script just type:
+* `BackgroundLoader.MethodNameHere`
+
+Basically Background Loader will create a new thread, and load your scene while you still can do other things, (also loads faster due to threading)
+
+### Code Examples
+
+* Simplest case possible
+
+```gscript
+    //set the scene to load and start thread
+    BackgroundLoader.preload_scene("res://scn_menu.tscn"); 
+    while (BackgroundLoader.can_change == false):
+        BackgroundLoader.change_scene_to_preloaded();
+```
+
 ## Using CSharp Version of Advanced Background Loader
 
 #### First Steps
@@ -63,33 +94,4 @@ So we have Transition.ChangeScene(string scenePath);
         GD.Print("Done");
 ```
 
-## Using GDScript Version of Advanced Background Loader
 
-#### First Steps
-
-* Open Godot
-* Open Project Settings
-* Go to Plugins
-* Enable Addon called: `Advanced Background Loader`
-
-#### Understanding it
-
-since the code provides:
-* `BackgroundLoader`
-
-when you open the first scene of your game this instance can be accessed anywhere
-without any problem, from any script just type:
-* `BackgroundLoader.MethodNameHere`
-
-Basically Background Loader will create a new thread, and load your scene while you still can do other things, (also loads faster due to threading)
-
-### Code Examples
-
-* Simplest case possible
-
-```gscript
-    //set the scene to load and start thread
-    BackgroundLoader.preload_scene("res://scn_menu.tscn"); 
-    while (BackgroundLoader.can_change == true):
-        BackgroundLoader.change_scene_to_preloaded();
-```
