@@ -21,8 +21,8 @@ func _thread_load(path):
 	while true: #iterate until we have a resource
 		# Update progress bar, use call deferred, which routes to main thread
 #		progress.call_deferred("set_value", ril.get_stage())
-		# Simulate a delay
-		OS.delay_msec(SIMULATED_DELAY_SEC * 1000.0)
+		# Simulate a delay for testing only
+		# OS.delay_msec(SIMULATED_DELAY_SEC * 1000.0)
 		# Poll (does a load step)
 		var err = ril.poll()
 		# if OK, then load another one. If EOF, it' s done. Otherwise there was an error.
